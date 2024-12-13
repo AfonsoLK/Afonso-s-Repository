@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      /* Paleta de cores */
+      :root {
+        --primary-color: #6a0dad; /* Roxo escuro */
+        --secondary-color: #9d4edd; /* Roxo médio */
+        --accent-color: #c77dff; /* Roxo claro */
+        --background-color: #2c003e; /* Fundo escuro */
+        --text-color: #ededed; /* Branco suave */
+      }
+
+      /* Reset básico */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, var(--background-color), #3c096c);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        color: var(--text-color);
+      }
+
+      .login-container {
+        background: rgba(44, 0, 62, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+        padding: 30px;
+        width: 350px;
+        text-align: center;
+      }
+
+      .login-container h1 {
+        font-size: 2em;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+      }
+
+      .login-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .login-container input {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid var(--secondary-color);
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 1em;
+        color: var(--text-color);
+        outline: none;
+        transition: all 0.3s ease;
+      }
+
+      .login-container input:focus {
+        border-color: var(--accent-color);
+        box-shadow: 0px 0px 10px var(--accent-color);
+      }
+
+      .login-container button {
+        background: var(--secondary-color);
+        border: none;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 1em;
+        color: var(--text-color);
+        cursor: pointer;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .login-container button:hover {
+        background: var(--accent-color);
+        box-shadow: 0px 0px 15px var(--accent-color);
+      }
+
+      .login-container p {
+        font-size: 0.9em;
+        margin-top: 20px;
+      }
+
+      .login-container a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .login-container a:hover {
+        color: var(--text-color);
+      }
+
+      /* Efeito animado no fundo */
+      .background-circles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .background-circles span {
+        position: absolute;
+        display: block;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        animation: float 20s infinite ease-in-out;
+      }
+
+      .background-circles span:nth-child(1) {
+        top: 10%;
+        left: 20%;
+        animation-duration: 25s;
+      }
+
+      .background-circles span:nth-child(2) {
+        top: 50%;
+        left: 70%;
+        animation-duration: 20s;
+      }
+
+      .background-circles span:nth-child(3) {
+        top: 80%;
+        left: 30%;
+        animation-duration: 30s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-circles">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="login-container">
+      <h1>Login</h1>
+      <form>
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+      </form>
+      <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>
+      <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+    </div>
+  </body>
+</html>
